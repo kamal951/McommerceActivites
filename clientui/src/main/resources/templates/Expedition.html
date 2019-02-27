@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <link rel="stylesheet" type="text/css"
+          href="http://localhost:8080/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"/>
+
+</head>
+<body>
+
+
+<div class="container">
+
+    <h1 class="text-center">Application Mcommerce</h1>
+
+    <div class="row">
+        <div class="col-md-4 mx-auto mt-5 text-center">
+
+            <h1 class="text-center">Exercice 2</h1>
+            <!-- On passe l'id de la commande ET le montant de celle-ci afin que le contrôleur ait les informations nécessaires pour faire appel au microservice de paiement -->
+            <p>
+                Commande n° <span th:text="${expedition.idCommande}"></span>
+            </p>
+            <p>Etat de la commande :</p>
+
+            <td th:switch="${expedition.etat}">
+                <span th:case="'0'" style="color:blue">En préparation</span>
+                <span th:case="'1'" style="color:orange" >Exepdiée</span>
+                <span th:case="'2'" style="color:green">Livré</span>
+                <span th:case="'2'" style="color:green">Livré</span>
+            </td>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="http://localhost:8080/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
